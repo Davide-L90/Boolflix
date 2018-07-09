@@ -1,0 +1,161 @@
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+body{
+   height: 100vh;
+   background: linear-gradient(black, lightgrey);
+}
+/* SEARCH BAR */
+#searchBar{
+   height: 80px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px solid white;
+   background-color: black;
+}
+#logo{
+   margin-left: 50px;
+}
+#logo h2{
+   font-size: 45px;
+   color: red;
+   font-family: 'Black Han Sans', sans-serif;
+}
+#searchInstruments{
+   margin-right: 50px;
+}
+#searchInstruments *{
+   height: 30px;
+   padding: 5px 10px;
+}
+#searchInstruments #inputSearch{
+   outline: none;
+   border-style: none;
+   border-radius: 5px;
+}
+#searchInstruments #searchButton{
+   border-radius: 5px;
+   border-style: none;
+   outline: none;
+   cursor: pointer;
+   transition: all 1s ease;
+}
+#searchInstruments #searchButton:hover{
+   background-color: #ffda70;
+}
+/* RESULT LIST */
+main{
+   height: calc(100% - 80px);
+   width: 100%;
+}
+.list-info{
+   width: 100%;
+   height: 100%;
+   overflow-x: auto;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.list-info::-webkit-scrollbar{
+   background-color: #1d2121;
+   width: 10px;
+}
+.list-info::-webkit-scrollbar-thumb{
+   background-color: lightgrey;
+   border-radius: 10px;
+}
+
+
+/* container of the poster with data inside */
+.poster-cnt{
+   margin: 55px;
+   position: relative;
+   transition: all 0.5s ease;
+   cursor: pointer;
+   width: 342px;
+   height: 500px;
+   display: inline-block;
+}
+.poster-cnt:hover{
+   transform: scale(1.2, 1.2);
+
+}
+.poster-cnt .poster-img{
+   transition: 0.5s ease;
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+.image-rotate{
+   transform: rotateY(180deg);
+}
+/* class assigned to stars */
+.colored{
+   color: yellow;
+}
+.overlay{
+   position: absolute;
+   top: 0;
+   height: 100%;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.9);
+   display: none;
+   overflow-y: auto;
+}
+.overlay::-webkit-scrollbar{
+   background-color: #1d2121;
+   width: 10px;
+}
+.overlay::-webkit-scrollbar-thumb{
+   background-color: lightgrey;
+   border-radius: 10px;
+}
+
+.movie_tv-infos{
+   color: white;
+   padding: 10px;
+}
+.movie_tv-infos .list-item{
+   padding: 10px 0;
+   white-space: normal;
+}
+.list-item .info-desc{
+   font-weight: bold;
+   font-size: 16px;
+}
+/* specify width for flags icons */
+.movie_tv-infos .list-item .flags img{
+   width: 35px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 700px) {
+   #searchBar{
+      height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+   #logo{
+      margin-left: 0;
+   }
+   #searchInstruments{
+      margin-right: 0;
+   }
+   main{
+      height: calc(100% - 120px);
+
+   }
+}
+
+@media screen and (max-width: 450px){
+
+   .poster-cnt{
+      height: 400px;
+   }
+}
